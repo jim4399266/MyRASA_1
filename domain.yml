@@ -1,0 +1,55 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- greet_cn
+- query_climate_cn
+- query_city_climate_cn
+entities:
+- city
+slots:
+  city:
+    type: text
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_greet_cn:
+  - text: 您好，有什么能帮您的？
+  - text: 你好！
+  - text: 哈喽！
+  - text: 有啥事吗？
+  - text: 干啥？
+  utter_qurey_climate_cn:
+  - text: 需要查询哪个地点的天气呢？
+  - text: 请输入查询地点。
+  - text: 您想了解哪个地方的天气情况呢？
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_greet_cn
+- utter_qurey_climate_cn
+- action_query_city_climate
+- action_default_fallback
